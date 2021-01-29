@@ -12,7 +12,7 @@ from statick_tool.plugins.discovery.markdown_discovery_plugin import (
 )
 
 
-def test_markdown_plugin_found():
+def test_markdown_discovery_plugin_found():
     """Test that the plugin manager finds the markdown discovery plugin."""
     manager = PluginManager()
     # Get the path to statick_tool/__init__.py, get the directory part, and
@@ -38,7 +38,7 @@ def test_markdown_plugin_found():
     )
 
 
-def test_markdown_plugin_scan_valid():
+def test_markdown_discovery_plugin_scan_valid():
     """Test that the markdown discovery plugin finds valid markdown source and bib files."""
     package = Package(
         "valid_package", os.path.join(os.path.dirname(__file__), "valid_package")
@@ -54,7 +54,7 @@ def test_markdown_plugin_scan_valid():
     assert set(package["md_src"]) == set(expected_fullpath)
 
 
-def test_markdown_plugin_scan_invalid():
+def test_markdown_discovery_plugin_scan_invalid():
     """Test that the markdown discovery plugin doesn't find non-markdown files."""
     package = Package(
         "invalid_package", os.path.join(os.path.dirname(__file__), "invalid_package")
